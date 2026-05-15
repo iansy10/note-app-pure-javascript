@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-thin.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-solid.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-regular.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-light.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-thin.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-solid.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-regular.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-light.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-thin.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-regular.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-light.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+            integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <title>Notes App</title>
+    </head>
+    <body>
+        <section class="add-modal">
+            <form class="form-modal">
+                <fieldset>
+                    <legend>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="24px"
+                            viewBox="0 -960 960 960"
+                            width="24px"
+                            fill="#e3e3e3"
+                        >
+                            <path
+                                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v268q-19-9-39-15.5t-41-9.5v-243H200v560h242q3 22 9.5 42t15.5 38H200Zm0-120v40-560 243-3 280Zm80-40h163q3-21 9.5-41t14.5-39H280v80Zm0-160h244q32-30 71.5-50t84.5-27v-3H280v80Zm0-160h400v-80H280v80ZM720-40q-83 0-141.5-58.5T520-240q0-83 58.5-141.5T720-440q83 0 141.5 58.5T920-240q0 83-58.5 141.5T720-40Zm-20-80h40v-100h100v-40H740v-100h-40v100H600v40h100v100Z"
+                            />
+                        </svg>
+                        Add new note
+                    </legend>
+
+                    <label for="text-add-title">Title</label>
+
+                    <div class="inputTitle">
+                        <input
+                            id="text-add-title"
+                            type="text"
+                            placeholder="Enter title note"
+                        />
+                        <i
+                            id="titleicon"
+                            class="fa-solid fa-circle-exclamation"
+                        ></i>
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <p id="validationTitle"></p>
+
+                    <label for="text-add-content">Content</label>
+
+                    <div class="inputContent">
+                        <textarea
+                            id="text-add-content"
+                            name="content"
+                            placeholder="Enter content note"
+                        ></textarea>
+                        <i
+                            id="contenticon"
+                            class="fa-solid fa-circle-exclamation"
+                        ></i>
+                    </div>
+                    <p id="validationContent"></p>
+                </fieldset>
+
+                <div class="form-icons">
+                    <button class="cancel-button" type="reset">Cancel</button>
+                    <button class="submit-button" type="submit">
+                        Save Notes
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="edit-modal">
+            <form class="form-modal">
+                <fieldset>
+                    <legend>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="24px"
+                            viewBox="0 -960 960 960"
+                            width="24px"
+                            fill="#e3e3e3"
+                        >
+                            <path
+                                d="M160-400v-80h280v80H160Zm0-160v-80h440v80H160Zm0-160v-80h440v80H160Zm360 560v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T863-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"
+                            />
+                        </svg>
+                        Edit note
+                    </legend>
+
+                    <label for="text-edit-title">Title</label>
+
+                    <div class="inputEditTitle">
+                        <input
+                            id="text-edit-title"
+                            type="text"
+                            placeholder="Enter title note"
+                        />
+                        <i
+                            id="editIcons"
+                            class="fa-solid fa-circle-exclamation"
+                        ></i>
+                        <i
+                            id="editIconsduplicate"
+                            class="fa-solid fa-triangle-exclamation"
+                        ></i>
+                    </div>
+                    <p id="validationeditTitlesedit"></p>
+
+                    <label for="text-edit-content">Content</label>
+
+                    <div class="inputEditContent">
+                        <textarea
+                            id="text-edit-content"
+                            name="content"
+                            placeholder="Enter content note"
+                        ></textarea>
+                        <i
+                            id="contenticonedit"
+                            class="fa-solid fa-circle-exclamation"
+                        ></i>
+                    </div>
+                    <p id="validationeditContent"></p>
+                </fieldset>
+                <div class="form-icons">
+                    <button class="cancel-button-edit" type="reset">
+                        Cancel
+                    </button>
+                    <button class="submit-button-edit" type="submit">
+                        Save Notes
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="delete-modal">
+            <article class="delete-card">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <h1>Delete Note</h1>
+                <p>
+                    Do you really want to delete these note? This process
+                    permanently deleted.
+                </p>
+                <div class="button-delete">
+                    <button class="noDelete">No, keep it.</button>
+                    <button class="yesDelete">Yes, Delete it!</button>
+                </div>
+            </article>
+        </section>
+
+        <section id="main-section">
+            <header>
+                <h1>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24px"
+                        viewBox="0 -960 960 960"
+                        width="24px"
+                        fill="#e3e3e3"
+                    >
+                        <path
+                            d="M280-160v-441q0-33 24-56t57-23h439q33 0 56.5 23.5T880-600v320L680-80H360q-33 0-56.5-23.5T280-160ZM81-710q-6-33 13-59.5t52-32.5l434-77q33-6 59.5 13t32.5 52l10 54h-82l-7-40-433 77 40 226v279q-16-9-27.5-24T158-276L81-710Zm279 110v440h280v-160h160v-280H360Zm220 220Z"
+                        />
+                    </svg>
+                    Quick Notes
+                </h1>
+                <div class="container-search">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        focusable="false"
+                        aria-hidden="true"
+                        style="pointer-events: none; display: inherit"
+                    >
+                        <path
+                            clip-rule="evenodd"
+                            d="M16.296 16.996a8 8 0 11.707-.708l3.909 3.91-.707.707-3.909-3.909zM18 11a7 7 0 00-14 0 7 7 0 1014 0z"
+                            fill-rule="evenodd"
+                        ></path>
+                    </svg>
+                    <input
+                        id="searchId"
+                        type="text"
+                        class="search"
+                        placeholder="Search title"
+                    />
+                </div>
+
+                <div class="toolbar">
+                    <button class="addnotesbutton">
+                        <i class="fa-light fa-plus"></i> Add Notes
+                    </button>
+                    <button class="thememode" data-title-thememode="Dark mode">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 -960 960 960"
+                            fill="#e3e3e3"
+                        >
+                            <path
+                                d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"
+                            />
+                        </svg>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 -960 960 960"
+                            fill="#e3e3e3"
+                        >
+                            <path
+                                d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"
+                            />
+                        </svg>
+                    </button>
+                </div>
+            </header>
+
+            <article class="text-content">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 -960 960 960"
+                    fill="#000000"
+                >
+                    <path
+                        d="m840-234-80-80v-446h-80v120H434L234-840h133q11-35 43-57.5t70-22.5q40 0 71.5 22.5T594-840h166q33 0 56.5 23.5T840-760v526ZM480-760q17 0 28.5-11.5T520-800q0-17-11.5-28.5T480-840q-17 0-28.5 11.5T440-800q0 17 11.5 28.5T480-760Zm166 560L200-646v446h446Zm-446 80q-33 0-56.5-23.5T120-200v-526l-65-65 57-57 736 736-57 57-65-65H200Z"
+                    />
+                </svg>
+                <h1>No notes yet!</h1>
+                <p>Create your first note to get started.</p>
+            </article>
+            <article class="search-title">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 -960 960 960"
+                >
+                    <path
+                        d="M476-280q21 0 35.5-14.5T526-330q0-21-14.5-35.5T476-380q-21 0-35.5 14.5T426-330q0 21 14.5 35.5T476-280Zm-36-154h74q0-17 1.5-29t6.5-23q5-11 12.5-20.5T556-530q35-35 49.5-58.5T620-642q0-53-36-85.5T487-760q-55 0-93.5 27T340-658l66 26q7-27 28-43.5t49-16.5q27 0 45 14.5t18 38.5q0 17-11 36t-37 42q-17 14-27.5 27.5T453-505q-7 15-10 31.5t-3 39.5Zm40 394L360-160H200q-33 0-56.5-23.5T120-240v-560q0-33 23.5-56.5T200-880h560q33 0 56.5 23.5T840-800v560q0 33-23.5 56.5T760-160H600L480-40ZM200-240h192l88 88 88-88h192v-560H200v560Zm280-280Z"
+                    />
+                </svg>
+                <p>Title not match!</p>
+            </article>
+            <section class="cards-notes"></section>
+        </section>
+
+        <script src="script.js" defer></script>
+    </body>
+</html>
